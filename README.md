@@ -21,5 +21,5 @@ sudo chown USERNAME:USERNAME ./ -R
 Для восстановления прав в git репе
 ```shell script
 sudo chmod 000 ./ -R
-sudo chmod u+rwX,g+rwX,o+rX,a+rX ./ -R
+sudo chmod u+rwX,g+rwX,o+rX,a+rX ./ -R #X, в отличии от x, будет применяться только к файлам
 ```
