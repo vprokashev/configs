@@ -1,4 +1,9 @@
 [http]
+  # Чтобы такого не происходило:
+  # error: RPC failed; curl 56 GnuTLS recv error (-9): Error decoding the received TLS packet.
+  # fatal: the remote end hung up unexpectedly
+  # fatal: неожиданный конец файла
+  # fatal: index-pack завершен с ошибкой
   postBuffer = 1048576000
 [user]
   name = 0c70pu5
