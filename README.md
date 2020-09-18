@@ -23,3 +23,8 @@ sudo chown USERNAME:USERNAME ./ -R
 sudo chmod 000 ./ -R
 sudo chmod u+rwX,g+rwX,o+rX,a+rX ./ -R #X, в отличии от x, будет применяться только к файлам
 ```
+
+Оптимизация png. Чуть лучше чем TinyPNG
+```shell script
+pngquant --strip --posterize 0 --quality 0-50 -f -o ABSOLUTE_PNG_PATH ABSOLUTE_PNG_PATH
+```
