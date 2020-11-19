@@ -31,6 +31,7 @@ pngquant --strip --posterize 0 --quality 0-50 -f -o ABSOLUTE_PNG_PATH ABSOLUTE_P
 
 Убрать шумы PulseAudio
 ```shell script
+# Скрипт выполнять с включенной гарнитурой
 pactl load-module module-echo-cancel use_master_format=1 aec_method=webrtc source_name=echoCancel_source sink_name=echoCancel_s
 # pulseaudio -k - перезапуск (удалит устройство)
 ```
