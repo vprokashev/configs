@@ -28,3 +28,9 @@ sudo chmod u+rwX,g+rwX,o+rX,a+rX ./ -R #X, в отличии от x, будет 
 ```shell script
 pngquant --strip --posterize 0 --quality 0-50 -f -o ABSOLUTE_PNG_PATH ABSOLUTE_PNG_PATH
 ```
+
+Убрать шумы PulseAudio
+```shell script
+pactl load-module module-echo-cancel use_master_format=1 aec_method=webrtc source_name=echoCancel_source sink_name=echoCancel_s
+# pulseaudio -k - перезапуск (удалит устройство)
+```
