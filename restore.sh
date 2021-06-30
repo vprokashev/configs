@@ -25,22 +25,24 @@ sudo apt install \
       google-chrome-stable \
       git \
       htop \
+      ffmpeg \
+      emacs \
       -y;
+
+git clone git@github.com:0c70pu5/emacs.d.git ~/.emacs.d;
 
 ## How to install Docker
 #docker https://docs.docker.com/engine/install/ubuntu/
 
-curl -s https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash;
-export NVM_DIR="$HOME/.nvm";
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";
-nvm install stable;
+#https://github.com/nvm-sh/nvm#installing-and-updating
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+#nvm use node
 
 #Webpack issue
 #https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
 #echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p;
 
-sudo snap install webstorm;
+sudo snap install webstorm --classic;
 sudo snap install vlc;
 
 #Gnome
