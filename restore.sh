@@ -36,7 +36,9 @@ git clone git@github.com:0c70pu5/emacs.d.git ~/.emacs.d;
 
 #https://github.com/nvm-sh/nvm#installing-and-updating
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+#nvm install 14
 #nvm use node
+#nvm alias default 14
 
 #Webpack issue
 #https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
