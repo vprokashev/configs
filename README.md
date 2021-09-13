@@ -34,3 +34,8 @@ pngquant --strip --posterize 0 --quality 0-50 -f -o ABSOLUTE_PNG_PATH ABSOLUTE_P
 sudo passwd root
 sudo passwd -l root
 ```
+
+Прослушиваемые порты
+```
+sudo netstat -tulpn | grep LISTEN
+```
