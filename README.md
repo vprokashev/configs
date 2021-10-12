@@ -40,6 +40,7 @@ sudo passwd -l root
 sudo netstat -tulpn | grep LISTEN
 ```
 
+Поиск
 ```
 find / -type f -exec grep -H 'text-to-find-here' {} \;
 grep -rnw '/path/to/somewhere/' -e 'pattern'
