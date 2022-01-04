@@ -38,6 +38,7 @@ sudo passwd -l root
 Прослушиваемые порты
 ```
 sudo netstat -tulpn | grep LISTEN
+sudo lsof -n -i :2022 | grep LISTEN
 ```
 
 Поиск
