@@ -47,4 +47,6 @@ find / -type f -exec grep -H 'text-to-find-here' {} \;
 grep -rnw '/path/to/somewhere/' -e 'pattern'
 ```
 
-orico https://ubuntuforums.org/showthread.php?t=2453631&p=14006235#post14006235
+orico 
+https://ubuntuforums.org/showthread.php?t=2453631&p=14006235#post14006235
+https://gist.github.com/rometsch/dfd24fb09c85c1ad2f25223dc1481aaa#gistcomment-3709943
