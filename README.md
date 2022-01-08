@@ -46,3 +46,5 @@ sudo lsof -n -i :2022 | grep LISTEN
 find / -type f -exec grep -H 'text-to-find-here' {} \;
 grep -rnw '/path/to/somewhere/' -e 'pattern'
 ```
+
+orico https://ubuntuforums.org/showthread.php?t=2453631&p=14006235#post14006235
