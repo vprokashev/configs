@@ -50,3 +50,7 @@ grep -rnw '/path/to/somewhere/' -e 'pattern'
 orico 
 https://ubuntuforums.org/showthread.php?t=2453631&p=14006235#post14006235
 https://gist.github.com/rometsch/dfd24fb09c85c1ad2f25223dc1481aaa#gistcomment-3709943
+
+Openssl pkcs12 -in FileName.pfx -nocerts -out FileName.pem -nodes
+openssl rsa -in ./FileName.pem -out ./FileName.pem -aes256
+openssl pkcs12 -in FileName.pfx -nokeys -out FileName.crt -nodes
