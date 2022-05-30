@@ -48,6 +48,18 @@ find / -type f -exec grep -H 'text-to-find-here' {} \;
 grep -rnw '/path/to/somewhere/' -e 'pattern'
 ```
 
+windows format
+as admin
+```
+diskpart
+list disk
+select disk x //number in table
+clean
+create partition primary
+format fs=fat32 unit=32k quick override
+assign
+```
+
 orico 
 https://ubuntuforums.org/showthread.php?t=2453631&p=14006235#post14006235
 https://gist.github.com/rometsch/dfd24fb09c85c1ad2f25223dc1481aaa#gistcomment-3709943
