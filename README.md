@@ -53,10 +53,12 @@ as admin
 ```
 diskpart
 list disk
-select disk x //number in table
+select disk x //number in table above
 clean
 create partition primary
-format fs=fat32 unit=32k quick override
+list partition
+select partition y //number in table above
+format quick fs=fat32 unit=32k 
 assign
 ```
 
