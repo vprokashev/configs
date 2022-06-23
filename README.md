@@ -69,3 +69,10 @@ https://gist.github.com/rometsch/dfd24fb09c85c1ad2f25223dc1481aaa#gistcomment-37
 Openssl pkcs12 -in FileName.pfx -nocerts -out FileName.pem -nodes
 openssl rsa -in ./FileName.pem -out ./FileName.pem -aes256
 openssl pkcs12 -in FileName.pfx -nokeys -out FileName.crt -nodes
+
+git
+```
+git show [commit] -U30 // 30 lines before and after
+git checkout HEAD -- [full_path] // rollback file
+git branch -r // remote branches
+```
