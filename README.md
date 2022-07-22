@@ -76,3 +76,5 @@ git show [commit] -U30 // 30 lines before and after
 git checkout HEAD -- [full_path] // rollback file
 git branch -r // remote branches
 ```
+
+git push origin --delete test
