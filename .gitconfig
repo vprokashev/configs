@@ -6,7 +6,7 @@
   # fatal: index-pack завершен с ошибкой
   postBuffer = 1048576000
 [user]
-  name = 0c70pu5
+  name = prokashevvs
   email = prokashevvs@gmail.com
 [core]
   editor = emacs -nw
