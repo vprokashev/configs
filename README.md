@@ -75,6 +75,11 @@ git
 git show [commit] -U30 // 30 lines before and after
 git checkout HEAD -- [full_path] // rollback file
 git branch -r // remote branches
+git push origin --delete test // delete remote branch
 ```
 
-git push origin --delete test
+ffmpg
+```
+.\ffmpeg.exe -ss 00:00:00 -to 00:02:41 -i .\source.mp4 .\target.mp4 // cut out the middle
+.\ffmpeg.exe -i .\source.mp4 -c copy -an .\target-soundless.mp4 // cut out sound
+```
