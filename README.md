@@ -83,3 +83,11 @@ ffmpg
 .\ffmpeg.exe -ss 00:00:00 -to 00:02:41 -i .\source.mp4 .\target.mp4 // cut out the middle
 .\ffmpeg.exe -i .\source.mp4 -c copy -an .\target-soundless.mp4 // cut out sound
 ```
+
+Monitor won't turn off when idle
+```
+Win+X #terminal (Admin)
+Dism /Online /Cleanup-Image /RestoreHealth
+sfc /scannow
+power off with shift
+```
