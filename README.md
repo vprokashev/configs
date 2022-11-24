@@ -91,3 +91,8 @@ Dism /Online /Cleanup-Image /RestoreHealth
 sfc /scannow
 power off with shift
 ```
+
+Добавить registry в npm
+```
+npm adduser --registry https://<registry_url>/<api_path>/ --always-auth
+```
