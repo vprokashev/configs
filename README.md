@@ -96,3 +96,11 @@ Npm login
 ```
 npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
 ```
+
+.npmrc
+```
+//<registry_url>:_password=<BASE64_PASSWORD>
+//<registry_url>:username=<USERNAME>
+//<registry_url>:email=youremail@email.com
+//<registry_url>:always-auth=true
+```
