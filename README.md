@@ -97,7 +97,7 @@ Npm login
 npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
 ```
 
-.npmrc
+.npmrc (C:\Users\<User>\AppData\Roaming)
 ```
 //<registry_url>:_password=<BASE64_PASSWORD>
 //<registry_url>:username=<USERNAME>
