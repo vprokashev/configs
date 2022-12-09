@@ -94,5 +94,5 @@ power off with shift
 
 Npm login
 ```
-npm login --registry https://<registry_url>/<api_path>/ --always-auth
+npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
 ```
