@@ -104,3 +104,5 @@ npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
 //<registry_url>:email=youremail@email.com
 //<registry_url>:always-auth=true
 ```
+
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
