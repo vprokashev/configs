@@ -92,7 +92,7 @@ sfc /scannow
 power off with shift
 ```
 
-Добавить registry в npm
+Npm login
 ```
-npm adduser --registry https://<registry_url>/<api_path>/ --always-auth
+npm login --registry https://<registry_url>/<api_path>/ --always-auth
 ```
