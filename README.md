@@ -105,4 +105,9 @@ npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
 //<registry_url>:always-auth=true
 ```
 
+npm
+```
+npm i --package-lock-only --lockfile-version=2
+```
+
 $env:NODE_OPTIONS = "--openssl-legacy-provider"
