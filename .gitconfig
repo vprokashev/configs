@@ -17,6 +17,12 @@
   lg = !"git lg2"
 [push]
   autoSetupRemote = true
+[commit]
+  gpgsign = true
+[tag]
+  gpgSign = true
+[pull]
+  rebase = true
 #[credential]
 #  helper = store --file /path/to/file
 #  helper = cache --timeout 999999 
