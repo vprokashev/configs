@@ -1,4 +1,9 @@
-Additional for https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh, https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP and https://developers.yubico.com/PGP/SSH_authentication/Windows.html 
+https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh  
+https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP  
+https://developers.yubico.com/PGP/SSH_authentication/Windows.html  
+https://www.jetbrains.com/help/clion/2023.1/set-up-GPG-commit-signing.html#configure-the-environment  
+
+
 1) Install latest Git
 2) Create folder ```mkdir C:\Users\<User_name>\.gnupg```. For bash it would be like ```mkdir ~/.gnupg```. Cd here
 3) For Yubikey supporting create ```echo "reader-port Yubico Yubi" >> ./scdaemon.conf```
