@@ -32,3 +32,12 @@ export GPG_TTY=$(tty)
 7) Add changes to .gitconfig by the doc
 8) Generate keys in card
 9) Copy public key for SSH and GPG on GitHub
+
+
+windows
+```
+for /f "delims=" %%i in ('gpgconf --list-dirs agent-ssh-socket') do set SSH_AUTH_SOCK=%%i
+gpgconf --launch gpg-agent
+gpg-connect-agent /bye
+for /f "delims=" %%i in ('tty') do set GPG_TTY=%%i
+```
