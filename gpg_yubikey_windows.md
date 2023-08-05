@@ -22,8 +22,9 @@ default-cache-ttl 600
 max-cache-ttl 7200
 ```
 5) Create file sshcontrol by the doc
-6) Run script .bash_profile
+6) Run script
 ```bash
+#.bash_profile
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent /bye
