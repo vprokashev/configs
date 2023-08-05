@@ -23,15 +23,13 @@ max-cache-ttl 7200
 ```
 5) Create file sshcontrol by the doc
 6) Run script .bash_profile
-bash
-```
+```bash
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent /bye
 export GPG_TTY=$(tty)
 ```
-windows
-```
+```cmd
 for /f "delims=" %%i in ('gpgconf --list-dirs agent-ssh-socket') do set SSH_AUTH_SOCK=%%i
 gpgconf --launch gpg-agent
 gpg-connect-agent /bye
