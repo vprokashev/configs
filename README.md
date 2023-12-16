@@ -99,6 +99,7 @@ npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
 
 .npmrc (C:\Users\<User>\AppData\Roaming)
 ```
+@<scope_name>:registry=<full_url>
 //<registry_url>:_password=<BASE64_PASSWORD>
 //<registry_url>:username=<USERNAME>
 //<registry_url>:email=youremail@email.com
