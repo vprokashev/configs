@@ -112,3 +112,16 @@ npm i --package-lock-only --lockfile-version=2
 ```
 
 $env:NODE_OPTIONS = "--openssl-legacy-provider"
+
+package.json with cjs and esm support
+examples: "DynamoDB OneTable", "OneTable Migrate", "OneTable"
+```
+"main": "dist/cjs/index.js",
+"module": "dist/mjs/index.js",
+"exports": {
+    ".": {
+        "import": "./dist/mjs/index.js",
+        "require": "./dist/cjs/index.js"
+    }
+},
+```
