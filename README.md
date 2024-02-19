@@ -125,3 +125,8 @@ examples: "DynamoDB OneTable", "OneTable Migrate", "OneTable"
     }
 },
 ```
+
+chrome
+```
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --no-sandbox --disable-gpu-watchdog --gpu-startup-dialog --user-data-dir="C:\chrome_debug"
+```
