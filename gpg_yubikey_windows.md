@@ -40,3 +40,5 @@ for /f "delims=" %%i in ('tty') do set GPG_TTY=%%i
 8) Generate keys in card
 9) Copy public key for SSH and GPG on GitHub
 
+![gpg-card-status-response](https://github.com/vprokashev/configs/assets/11475496/ed7951dc-daed-4d24-aaa7-11da0e988da2)
+
