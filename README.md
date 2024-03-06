@@ -1,7 +1,7 @@
 # Восстановление после переустановки
 ```shell script
 apt install curl;
-curl -s https://raw.githubusercontent.com/0c70pu5/configs/master/restore.sh | bash;
+curl -s https://raw.githubusercontent.com/vprokashev/configs/master/restore.sh | bash;
 ```
 
 ## Команды:
@@ -36,13 +36,13 @@ sudo passwd root
 sudo passwd -l root
 ```
 
-Прослушиваемые порты
+Ports
 ```
 sudo netstat -tulpn | grep LISTEN
 sudo lsof -n -i :2022 | grep LISTEN
 ```
 
-Поиск
+Grep and find
 ```
 find / -type f -exec grep -H 'text-to-find-here' {} \;
 grep -rnw '/path/to/somewhere/' -e 'pattern'
@@ -62,14 +62,6 @@ format quick fs=fat32 unit=32k
 assign
 ```
 
-orico 
-https://ubuntuforums.org/showthread.php?t=2453631&p=14006235#post14006235
-https://gist.github.com/rometsch/dfd24fb09c85c1ad2f25223dc1481aaa#gistcomment-3709943
-
-Openssl pkcs12 -in FileName.pfx -nocerts -out FileName.pem -nodes
-openssl rsa -in ./FileName.pem -out ./FileName.pem -aes256
-openssl pkcs12 -in FileName.pfx -nokeys -out FileName.crt -nodes
-
 git
 ```
 git show [commit] -U30 // 30 lines before and after
@@ -84,14 +76,6 @@ ffmpg
 .\ffmpeg.exe -i .\source.mp4 -c copy -an .\target-soundless.mp4 // cut out sound
 ```
 
-Monitor won't turn off when idle
-```
-Win+X #terminal (Admin)
-Dism /Online /Cleanup-Image /RestoreHealth
-sfc /scannow
-power off with shift
-```
-
 Npm login
 ```
 npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
@@ -104,11 +88,6 @@ npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
 //<registry_url>:username=<USERNAME>
 //<registry_url>:email=youremail@email.com
 //<registry_url>:always-auth=true
-```
-
-npm
-```
-npm i --package-lock-only --lockfile-version=2
 ```
 
 $env:NODE_OPTIONS = "--openssl-legacy-provider"
