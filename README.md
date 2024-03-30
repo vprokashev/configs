@@ -78,7 +78,8 @@ ffmpg
 
 Npm login
 ```
-npm login --registry https://<registry_url>/<api_path>/ --scope=@<org>
+npm login --registry https://<registry_url>/<api_path>/ --scope=@<org> --auth-type=web
+echo -n '123' | base64
 ```
 
 .npmrc (C:\Users\<User>\AppData\Roaming)
