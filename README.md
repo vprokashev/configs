@@ -110,3 +110,8 @@ chrome
 ```
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --no-sandbox --disable-gpu-watchdog --gpu-startup-dialog --user-data-dir="C:\chrome_debug"
 ```
+
+Nuget (run in PowerShell)
+```
+dotnet nuget add source "https://host/api/nuget/repository_folder" --name "" --username "" --password ""
+```
