@@ -44,6 +44,9 @@ gpgconf --launch gpg-agent
 gpg-connect-agent /bye
 for /f "delims=" %%i in ('tty') do set GPG_TTY=%%i
 ```
+```cmd
+start "PyCharm" "C:\Users\[user_name]\AppData\Local\Programs\PyCharm Community\bin\pycharm64.exe"
+```
 7) Add changes to .gitconfig by the doc
 8) Generate keys in card
 9) Copy public key for SSH and GPG on GitHub
