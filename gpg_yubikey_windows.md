@@ -15,6 +15,7 @@ How to start:
 gpg.conf
 ```txt
 use-agent
+echo "use-agent" >> ./gpg.conf
 ```
 gpg-agent.conf
 ```txt
@@ -23,6 +24,14 @@ enable-win32-openssh-support
 use-standard-socket
 default-cache-ttl 600
 max-cache-ttl 7200
+
+cat << EOF > gpg-agent.conf
+enable-ssh-support
+enable-win32-openssh-support
+use-standard-socket
+default-cache-ttl 600
+max-cache-ttl 7200
+EOF
 ```
 5) Create file sshcontrol by the doc
 6) Run script
