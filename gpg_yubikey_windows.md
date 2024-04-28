@@ -13,18 +13,11 @@ How to start:
 4) For SSH integration create 2 files:  
 
 gpg.conf
-```txt
-use-agent
+```bash
 echo "use-agent" >> ./gpg.conf
 ```
 gpg-agent.conf
-```txt
-enable-ssh-support
-enable-win32-openssh-support
-use-standard-socket
-default-cache-ttl 600
-max-cache-ttl 7200
-
+```bash
 cat << EOF > gpg-agent.conf
 enable-ssh-support
 enable-win32-openssh-support
@@ -34,6 +27,9 @@ max-cache-ttl 7200
 EOF
 ```
 5) Create file sshcontrol by the doc
+```bash
+echo {keygrip [A]} >> ~/.gnupg/sshcontrol
+```
 6) Run script
 ```bash
 #.bash_profile
