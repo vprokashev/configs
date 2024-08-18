@@ -1,11 +1,15 @@
+Todo: 
+  * Split into 3 scenarios. 1 Generate and configure a key. 2 Use an existing key on a 2nd device. 3 Configure Git.
+
 https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh  
 https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP  
 https://developers.yubico.com/PGP/SSH_authentication/Windows.html  
 https://www.jetbrains.com/help/clion/2023.1/set-up-GPG-commit-signing.html#configure-the-environment  
 
+Notes:
 Before generating keys make sure you tweaked next options on your card: name, url, login, lang, passwd, key-attr  
 If you don't save the public key, you won't be able to use the private one. The public key ISN'T stored on the card, and the private key cannot be exported.
-My public key https://github.com/vprokashev.gpg 
+My public key https://github.com/vprokashev.gpg. Use 'fetch' command from card for a pulling public part
 
 How to start:
 1) Install latest Git
@@ -27,7 +31,7 @@ default-cache-ttl 600
 max-cache-ttl 7200
 EOF
 ```
-5) Create file sshcontrol by the doc
+5) Create file sshcontrol by the doc. (TODO: keygrip appears after both parts of key have been generated. Check the order of the steps)
 ```bash
 echo {keygrip [A]} >> ~/.gnupg/sshcontrol
 ```
