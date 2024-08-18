@@ -9,7 +9,7 @@ https://www.jetbrains.com/help/clion/2023.1/set-up-GPG-commit-signing.html#confi
 Notes:
 Before generating keys make sure you tweaked next options on your card: name, url, login, lang, passwd, key-attr  
 If you don't save the public key, you won't be able to use the private one. The public key ISN'T stored on the card, and the private key cannot be exported.
-My public key https://github.com/vprokashev.gpg. Use 'fetch' command from card for a pulling public part
+My public key https://github.com/vprokashev.gpg. Use the 'fetch' command from the card to pull the public part.
 
 How to start:
 1) Install latest Git
