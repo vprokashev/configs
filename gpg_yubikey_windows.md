@@ -66,4 +66,5 @@ ssh-add -L
 
 ![gpg-card-status-response](https://github.com/vprokashev/configs/assets/11475496/ed7951dc-daed-4d24-aaa7-11da0e988da2)
 
-![my settings example](https://github.com/user-attachments/assets/9348b948-6678-411c-86d1-0bb7608cb1ac)
+![my settings example](https://github.com/user-attachments/assets/1fceb38c-9b00-451c-a12e-d6d93852e593)
+
