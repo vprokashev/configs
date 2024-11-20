@@ -115,3 +115,7 @@ Nuget (run in PowerShell)
 ```
 dotnet nuget add source "https://host/api/nuget/repository_folder" --name "" --username "" --password ""
 ```
+
+```
+ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i "https://example.com/playlist.m3u8" -c copy video.mp4
+```
