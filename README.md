@@ -119,3 +119,9 @@ dotnet nuget add source "https://host/api/nuget/repository_folder" --name "" --u
 ```
 ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i "https://example.com/playlist.m3u8" -c copy video.mp4
 ```
+
+Speed limit
+```
+New-NetQosPolicy -Name "LimitYandexCloud" -IPDstPrefix "213.180.193.243/32" -IPProtocol "TCP" -ThrottleRateActionBitsPerSecond 4048
+Remove-NetQosPolicy -Name "LimitYandexCloud"
+```
