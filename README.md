@@ -125,3 +125,22 @@ Speed limit
 New-NetQosPolicy -Name "LimitYandexCloud" -IPDstPrefix "213.180.193.243/32" -IPProtocol "TCP" -ThrottleRateActionBitsPerSecond 4048
 Remove-NetQosPolicy -Name "LimitYandexCloud"
 ```
+
+Kubectl
+```sh
+kubectl get deployment
+kubectl get pod
+kubectl logs
+
+kubectl create namespace [namespace-name]
+kubectl describe service [service-name] -n [namespace-name]
+kubectl get pods -n [namespace-name]
+kubectl describe pod [pod-name]
+kubectl get endpoints -n [namespace-name]
+kubectl delete all --all -n [namespace-name]
+kubectl delete pod --all -n [namespace-name]
+kubectl delete configmap [configmap-name] -n [namespace-name]
+kubectl create configmap [configmap-name] --from-env-file=.env -n [namespace-name]
+kubectl logs [pod-name] -n [namespace-name] --container [container-name]
+kubectl get configmap [configmap-name] -n [namespace-name] -o yaml > configmap.yaml
+```
