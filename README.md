@@ -143,4 +143,6 @@ kubectl delete configmap [configmap-name] -n [namespace-name]
 kubectl create configmap [configmap-name] --from-env-file=.env -n [namespace-name]
 kubectl logs [pod-name] -n [namespace-name] --container [container-name]
 kubectl get configmap [configmap-name] -n [namespace-name] -o yaml > configmap.yaml
+
+kubectl port-forward service/gpt 8080:80 -n [namespace-name] #8080 - exposed, 80 - inner
 ```
