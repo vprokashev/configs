@@ -74,6 +74,8 @@ ffmpg
 ```
 .\ffmpeg.exe -ss 00:00:00 -to 00:02:41 -i .\source.mp4 .\target.mp4 // cut out the middle
 .\ffmpeg.exe -i .\source.mp4 -c copy -an .\target-soundless.mp4 // cut out sound
+ffmpeg -f gdigrab -framerate 30 -i desktop -video_size 1920x1080 output.mp4 // screencast Windows
+ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 output.mp4 // screencast Linux
 ```
 
 Npm login
