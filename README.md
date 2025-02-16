@@ -152,5 +152,6 @@ git
 ```sh
 # CHANGELOG for two tags
 # git changelog v2025-02-16T10-03-00..v2025-02-16T12-09-00
+# original command: ```git log v2025-02-16T10-03-00..v2025-02-16T12-09-00 --pretty=format:"%C(yellow)%h%Creset %C(magenta)%s%Creset%+b" --stat```
 git config --global alias.changelog "log --pretty=format:'%C(yellow)%h%Creset %C(magenta)%s%Creset%+b' --stat"
 ```
