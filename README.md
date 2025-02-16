@@ -148,3 +148,9 @@ kubectl get configmap [configmap-name] -n [namespace-name] -o yaml > configmap.y
 
 kubectl port-forward service/gpt 8080:80 -n [namespace-name] #8080 - exposed, 80 - inner
 ```
+git
+```sh
+# CHANGELOG for two tags
+# git changelog v2025-02-16T10-03-00..v2025-02-16T12-09-00
+git config --global alias.changelog "log --pretty=format:'%C(yellow)%h%Creset %C(magenta)%s%Creset%+b' --stat"
+```
