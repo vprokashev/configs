@@ -133,6 +133,8 @@ Kubectl
 kubectl get deployment
 kubectl get pod
 kubectl logs
+kubectl get all -n [namespace-name]
+kubectl apply -f [config.yaml]
 
 kubectl create namespace [namespace-name]
 kubectl describe service [service-name] -n [namespace-name]
