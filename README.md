@@ -76,6 +76,7 @@ ffmpg
 .\ffmpeg.exe -i .\source.mp4 -c copy -an .\target-soundless.mp4 // cut out sound
 ffmpeg -f gdigrab -framerate 30 -i desktop -video_size 1920x1080 output.mp4 // screencast Windows
 ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 output.mp4 // screencast Linux
+ffmpeg -i input.mp4 -vf "scale=400:-1" -c:v libx264 -crf 28 -preset veryslow -c:a aac -b:a 96k -movflags +faststart output.mp4
 ```
 
 Npm login
