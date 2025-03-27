@@ -5,6 +5,7 @@ https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-g
 https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP  
 https://developers.yubico.com/PGP/SSH_authentication/Windows.html  
 https://www.jetbrains.com/help/clion/2023.1/set-up-GPG-commit-signing.html#configure-the-environment  
+https://learn.microsoft.com/en-us/windows/wsl/connect-usb  
 
 Notes:
 * Before generating keys make sure you tweaked next options on your card: name, url, login, lang, passwd, key-attr  
