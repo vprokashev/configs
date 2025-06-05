@@ -50,5 +50,11 @@ sudo snap install vlc;
 #Gnome
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]";
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]";
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "[]";
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "[]";
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]";
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]";
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]";
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "[]";
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source "['<Shift>Alt_L']";
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']";
