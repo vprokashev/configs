@@ -1,3 +1,4 @@
+# Yubikey GPG
 Todo: 
   * Split into 3 scenarios. 1 Generate and configure a key. 2 Use an existing key on a 2nd device. 3 Configure Git.
 
@@ -70,7 +71,7 @@ ssh-add -L
 ![my settings example](https://github.com/user-attachments/assets/1fceb38c-9b00-451c-a12e-d6d93852e593)
 
 
-Ubuntu 22.04.2
+## Ubuntu 22.04.2
 https://blog.markushuber.org/2024/09/12/yubikeys-with-gnupg-on-ubuntu-24-04/
 Issue:
 ```bash
