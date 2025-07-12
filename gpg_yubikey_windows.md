@@ -69,3 +69,33 @@ ssh-add -L
 
 ![my settings example](https://github.com/user-attachments/assets/1fceb38c-9b00-451c-a12e-d6d93852e593)
 
+
+Ubuntu 22.04.2
+https://blog.markushuber.org/2024/09/12/yubikeys-with-gnupg-on-ubuntu-24-04/
+Issue:
+```bash
+gpg --card-status
+gpg: selecting card failed: No such device
+gpg: OpenPGP card not available: No such device
+```
+Resolve:
+1) Install
+```bash
+sudo apt install gnupg2 libpcsclite1 pcscd scdaemon
+sudo systemctl enable --now pcscd
+```
+2) Add
+```
+cat .gnupg/scdaemon.conf
+
+disable-ccid
+pcsc-shared
+```
+3)
+```
+sudo pkill -9 gpg-agent
+```
+4) check
+```
+gpg --card-status
+```
