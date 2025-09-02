@@ -1,0 +1,31 @@
+# Минимальная версия и проект
+cmake_minimum_required(VERSION 3.28)
+project(MyApp VERSION 1.0.0 LANGUAGES CXX)
+
+# Глобальные настройки / параметры
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) 
+
+# Поиск пакетов
+find_package(Qt6 6.8 REQUIRED COMPONENTS Core Gui Qml Quick)
+find_package(OpenSSL REQUIRED)
+
+# Добавление исходников (таргета)
+## Для исполняемых файлов
+add_executable(MyApp main.cpp app.cpp)
+## Для библиотек
+add_library(MyLib STATIC lib.cpp lib.h)
+
+# Линковка с зависимостями
+target_link_libraries(MyApp PRIVATE Qt6::Core Qt6::Gui MyLib)
+
+# Пути к заголовкам
+target_include_directories(MyLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Опции для таргета
+set_target_properties(MyApp PROPERTIES WIN32_EXECUTABLE ON)
+
+# Сборка подкаталогов
+add_subdirectory(src)
+add_subdirectory(third_party/somelib)
