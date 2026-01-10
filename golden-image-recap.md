@@ -9,7 +9,7 @@
 
 ## Способ сборки образа
 
-### 1. Установка debootstrap (в Ubuntu)
+### 1. Установка debootstrap (в Debian)
 ```bash
 sudo apt update
 sudo apt install debootstrap
