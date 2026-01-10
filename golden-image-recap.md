@@ -192,3 +192,25 @@ ls /mnt/boot
 sync
 reboot
 ```
+
+## Установка загрузчика (только при первом развёртывании)
+
+### 1. Загрузиться в SystemRescue
+### 2. Смонтировать root и EFI:
+```bash
+mount /dev/nvme1n1p2 /mnt
+mount /dev/nvme1n1p1 /mnt/boot
+```
+### 3. Подготовить chroot:
+```bash
+mount --bind /dev /mnt/dev
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+chroot /mnt /bin/bash
+```
+### 4. Установить GRUB:
+```
+apt install grub-efi-amd64
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Debian
+update-grub
+```
