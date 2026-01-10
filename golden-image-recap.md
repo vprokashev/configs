@@ -139,3 +139,56 @@ sudo tar \
   -C /opt/debian-golden . \
 | zstd -19 -T0 > debian-testing-xfce-golden.tar.zst
 ```
+
+## System Rescue
+Закатать на флешку [System Rescue](https://www.system-rescue.org/Download/) 
+```bash
+sudo dd if=systemrescue-12.03-amd64.iso of=/dev/xxx bs=4M status=progress oflag=sync
+```
+Проверка дисков - `lsblk`
+
+## Reimage
+
+### 1. Определяем диски (ОБЯЗАТЕЛЬНО)
+```bash
+lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL
+```
+
+### 2. ⚠️ ЭТА КОМАНДА СТИРАЕТ ВСЮ LINUX-СИСТЕМУ
+```bash
+mkfs.ext4 -F /dev/xxx
+```
+
+### 3. Монтирование разделов
+```bash
+mount /dev/xxx /mnt
+mkdir -p /mnt/boot
+mount /dev/xxx /mnt/boot
+```
+
+### 4. Восстановление Golden-образа
+Найти куда смонтировалась флешка с образом, либо смонтировать самому. Например тут - `/run/media/root/RESCUE_DATA`
+```bash
+mkdir /usb
+mount /dev/sdb1 /usb
+```
+```bash
+zstd -d < /usb/debian-testing-xfce-golden.tar.zst \
+| tar --numeric-owner --xattrs --acls -xpf - -C /mnt
+```
+### 5. Проверка (быстро)
+```bash
+ls /mnt
+ls /mnt/boot
+```
+Ты должен увидеть:
+* /mnt/bin
+* /mnt/etc
+* /mnt/usr
+* /mnt/boot/vmlinuz-*
+
+### 6. Финал
+```bash
+sync
+reboot
+```
