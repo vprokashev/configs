@@ -149,9 +149,9 @@ sudo dd if=systemrescue-12.03-amd64.iso of=/dev/xxx bs=4M status=progress oflag=
 
 ## Reimage
 
-### Разделы:
-    xxx1 - EFI
-    xxx2 - ext4
+### Перед началом убедись, что:
+- xxx1 = EFI (vfat)
+- xxx2 = root (ext4)
 
 ### 1. Определяем диски (ОБЯЗАТЕЛЬНО)
 ```bash
@@ -208,8 +208,8 @@ reboot
     
 далее:
 
-    xxx1 - EFI
-    xxx2 - ext4
+    xxx1 = EFI (vfat)
+    xxx2 = root (ext4)
 
 Пример устройств:
 
