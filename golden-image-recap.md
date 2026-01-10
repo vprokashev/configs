@@ -193,24 +193,127 @@ sync
 reboot
 ```
 
-## Установка загрузчика (только при первом развёртывании)
+## Initial install
 
-### 1. Загрузиться в SystemRescue
-### 2. Смонтировать root и EFI:
-```bash
-mount /dev/nvme1n1p2 /mnt
-mount /dev/nvme1n1p1 /mnt/boot
-```
-### 3. Подготовить chroot:
-```bash
-mount --bind /dev /mnt/dev
-mount --bind /proc /mnt/proc
-mount --bind /sys /mnt/sys
-chroot /mnt /bin/bash
-```
-### 4. Установить GRUB:
-```
-apt install grub-efi-amd64
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Debian
-update-grub
-```
+## Целевая схема диска
+
+    Linux SSD (GPT)
+    ├─ EFI   512 MB   FAT32   → /boot
+    └─ ROOT  остальное ext4  → /
+
+Пример устройств:
+
+    DISK=/dev/nvme1n1
+    EFI=/dev/nvme1n1p1
+    ROOT=/dev/nvme1n1p2
+
+## 0. Проверка дисков (ОБЯЗАТЕЛЬНО)
+
+Перед любыми действиями:
+
+    lsblk -o NAME,SIZE,FSTYPE,MODEL
+
+Убедись, что:
+- выбран Linux-диск
+- Windows-диск не используется
+
+Если есть сомнения — СТОП.
+
+## 1. Разметка диска (GPT)
+
+⚠️ СТИРАЕТ ВСЕ ДАННЫЕ НА DISK
+
+    fdisk /dev/xxx
+
+Внутри fdisk:
+
+    g        # создать GPT
+
+    n        # EFI
+    1
+    <Enter>
+    +512M
+
+    t
+    1        # EFI System
+
+    n        # ROOT
+    2
+    <Enter>
+    <Enter>
+
+    w        # записать изменения
+
+## 2. Форматирование разделов
+
+### EFI
+    mkfs.vfat -F32 /dev/xxx1
+
+### ROOT
+    mkfs.ext4 -F /dev/xxx2
+
+## 3. Монтирование
+
+    mount /dev/xxx2 /mnt
+    mkdir -p /mnt/boot
+    mount /dev/xxx1 /mnt/boot
+
+Проверка:
+
+    lsblk
+
+Ожидаемо:
+
+    xxx2  ext4  /mnt
+    xxx1  vfat  /mnt/boot
+
+## 4. Распаковка golden-образа
+
+    zstd -d < /path/to/debian-testing-xfce-golden.tar.zst \
+    | tar --numeric-owner --xattrs --acls -xpf - -C /mnt
+
+## 5. Подготовка chroot
+
+    mount --bind /dev  /mnt/dev
+    mount --bind /proc /mnt/proc
+    mount --bind /sys  /mnt/sys
+    mount --bind /run  /mnt/run
+
+    chroot /mnt /bin/bash
+
+## 6. Установка GRUB (UEFI)
+
+    apt update
+    apt install -y grub-efi-amd64
+
+    grub-install \
+      --target=x86_64-efi \
+      --efi-directory=/boot \
+      --bootloader-id=Debian
+
+    update-grub
+
+Результат:
+- создана EFI-запись
+- ядро добавлено в GRUB
+- система стала загрузочной
+
+## 7. Завершение
+
+    exit
+    umount -R /mnt
+    reboot
+
+Извлеки флешку.
+
+## После первого запуска
+
+Система должна:
+- загрузиться в GRUB
+- показать LightDM
+- войти в XFCE
+
+С этого момента:
+- EFI НЕ форматируется
+- загрузчик НЕ переустанавливается
+- используется только reimage
