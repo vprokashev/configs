@@ -149,6 +149,10 @@ sudo dd if=systemrescue-12.03-amd64.iso of=/dev/xxx bs=4M status=progress oflag=
 
 ## Reimage
 
+### Разделы:
+    xxx1 - EFI
+    xxx2 - ext4
+
 ### 1. Определяем диски (ОБЯЗАТЕЛЬНО)
 ```bash
 lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL
@@ -156,14 +160,15 @@ lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL
 
 ### 2. ⚠️ ЭТА КОМАНДА СТИРАЕТ ВСЮ LINUX-СИСТЕМУ
 ```bash
-mkfs.ext4 -F /dev/xxx
+umount -R /mnt
+mkfs.ext4 -F /dev/xxx2
 ```
 
 ### 3. Монтирование разделов
 ```bash
-mount /dev/xxx /mnt
+mount /dev/xxx2 /mnt
 mkdir -p /mnt/boot
-mount /dev/xxx /mnt/boot
+mount /dev/xxx1 /mnt/boot
 ```
 
 ### 4. Восстановление Golden-образа
@@ -200,6 +205,11 @@ reboot
     Linux SSD (GPT)
     ├─ EFI   512 MB   FAT32   → /boot
     └─ ROOT  остальное ext4  → /
+    
+далее:
+
+    xxx1 - EFI
+    xxx2 - ext4
 
 Пример устройств:
 
